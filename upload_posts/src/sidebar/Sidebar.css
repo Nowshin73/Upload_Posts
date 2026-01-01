@@ -1,0 +1,401 @@
+
+.sidebar{
+padding: 5px 10px 20px 10px;
+height: 100vh;
+position: fixed;
+top: 0%;
+left: 0%;
+display: flex;
+flex-direction: column;
+width: fit-content;
+overflow-y: visible;
+overflow-x: visible;
+box-sizing: border-box;
+flex-shrink: 0;
+align-items: stretch;
+align-self: auto;
+justify-content: flex-start;
+z-index: 10;
+
+
+}
+
+.sidebar-container{
+    display: flex;
+    padding: 8px 0px 0px 20px;
+    flex-direction: column;
+  border-inline-end:1px solid rgb(40, 40, 40);
+padding-inline-end: 12px;
+box-sizing: border-box;
+padding-inline-start: 12px;
+align-items: flex-start;
+width: 244px;
+height: 100dvh;
+transform: translateX(0px);
+}
+.logo{
+    width: 100%;
+    height: 92px;
+    display: block;
+    flex-shrink: 0;
+    position: relative;
+
+}
+.logo>div{
+width: 100%;
+padding-top: 25px;
+padding-bottom: 19px;
+margin-bottom: 16px;
+padding-inline: 12px;
+height: 73px;
+position: absolute;
+top:0%;
+inset-inline-start: 0;
+}
+.logo>div>a{
+font-size: 20px;
+cursor: pointer;
+box-sizing: border-box;
+touch-action: manipulation;
+display: inline;
+text-decoration: none;
+color: rgb(33, 33, 33);
+}
+.sidebar-links{
+width: 100%;
+flex-grow: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+.sidebar-links>div{
+    border-radius: 8px;
+}
+.sidebar-links>div:hover{
+    background: #3b3b3b32;
+}
+.sidebar-links>div>div{
+    position: relative;
+    display: block;
+}
+
+.sidebar-link-container{
+     position: relative;
+    display: block;
+}
+
+.sidebar-link-container>a{
+    text-decoration: none;
+    color: rgb(33, 33, 33);
+    touch-action: manipulation;
+    box-sizing: border-box;
+    cursor: pointer;
+    list-style: none;
+}
+
+.sidebar-link-elements{
+    border-start-end-radius: 8px;
+    border-start-start-radius: 8px;
+    border-end-start-radius: 8px;
+   border-end-end-radius: 8px;
+    display: inline-flex;
+    margin: 4px 0 0 4px;
+    width: 100%;
+    padding: 12px 0 0 12px;
+    flex-direction: row;
+    padding-inline: 12px;
+}
+
+.sidebar-link-elements-icon{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-self: auto;
+    margin: 0;
+    padding: 0;
+}
+.sidebar-link-elements-icon>div{
+    height: 24px;
+    width: 24px;
+    box-sizing: border-box;
+    color: rgb(255, 106, 0);
+}
+.sidebar-link-elements-text{
+    display: flex;
+    opacity: 1;
+    height: 24px;
+    width: fit-content;
+    overflow-x: hidden;
+    padding-inline: 16px;
+    box-sizing: border-box;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+}
+.sidebar-link-elements-text>span{
+    font-size: 16px;
+    font-weight: 700;
+    word-wrap: break-word;
+    position: relative;
+    display: block;
+    font-family:  "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.background{
+    position: absolute;
+     display: flex;
+     flex-direction: column;
+    justify-content: flex-start;
+   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.521);
+ z-index: 20;
+ 
+}
+.cross-imo{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+}
+.create{
+    position: fixed;
+    margin-top: 5rem;
+    border-radius: 20%;
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background: white;
+}
+.create-container{
+    display: flex;
+    padding: 20px 40px;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.create-up{
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+   padding-bottom: 20px;
+    border-bottom: 2px solid #3b3b3b32;
+}
+.create-up>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.create-up>div>span{
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-weight: 800;
+   font-size: 20px;
+}
+.create-down{
+    margin-top: 1rem;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding:10px 20px;
+}
+.create-down>div{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 20px;
+min-width: 220px;
+}
+.create-down>div:hover{
+background: rgba(255, 166, 0, 0.277);
+}
+.create-down>div>button{
+width: 100%;
+}
+.photo-video{
+    font-size: 5rem;
+   margin-bottom: 20px;
+}
+.write{
+    position: fixed;
+    margin-top: 5rem;
+    border-radius: 5%;
+    width: 50%;
+    min-width: 300px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    background: white;
+}
+.write-container{
+    display: flex;
+    padding: 10px 10px;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.write-up{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     padding-bottom: 10px;
+}
+.write-up>div>span{
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-weight: 800;
+   font-size: 20px;
+}
+.write-down{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding-bottom: 10px;
+}
+.write-down>div{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding-bottom: 10px;
+}
+.write-down>div>form{
+width: 400px;
+height: 450px;
+overflow: hidden;
+}
+.write-down>div>form>textarea{
+width: 90%;
+height: 80%;
+padding-top: 20px;
+padding-bottom: 20px;
+padding-inline-start:10px;
+padding-inline-end: 10px;
+
+line-height: 30px;
+resize: none;
+}
+
+.wd-right{
+    padding: 12px 20px;
+    height: 100%;
+}
+.edit-bg{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+  
+}
+.edit-bg>div>span{
+   display: block;
+   position: relative;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: 16px;
+   font-weight: 600;
+  
+   padding: 5px;
+}
+.change-bg{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 60px;
+    overflow-x: auto;
+    overflow-y: hidden;  
+    background: gainsboro;
+}
+.change-bg>div{
+    width: 100%;
+    height: 100%;
+}
+.change-bg>div>button{
+  width: 60px;
+  height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    touch-action: manipulation;
+   
+}
+.tz-div{
+  padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    gap: 5px;
+    height: 40px;
+    overflow: hidden;
+}
+.ta-div{
+  padding: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    gap: 5px;
+    height: 60px;
+    overflow: hidden;
+}
+.tz-div>div>button{
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+    touch-action: manipulation;
+   width: 45px;
+   height: 40px;
+    background: none;
+    font-size: 30px;
+    border-radius: 50%;
+    background: #000;
+    color: white;
+}
+.align-btn{
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+    touch-action: manipulation;
+   width: 45px;
+   height: 40px;
+    background: none;
+    font-size: 30px;
+    color: gray;
+}
+.activeAlign{
+       cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-self: center;
+    touch-action: manipulation;
+   width: 45px;
+   height: 40px;
+    font-size: 30px;
+    background: orange;
+    color: white;
+}
