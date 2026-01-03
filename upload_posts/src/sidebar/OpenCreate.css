@@ -1,0 +1,41 @@
+/* .preview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.preview-img{
+width: 80%;
+height: 40%;
+}
+.preview-video{
+width: 80%;
+height: 40%;
+} */
+ .upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.photo-video {
+  font-size: 60px;
+  color: #8e8e8e;
+}
+
+.preview img,
+.preview video {
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.caption-input {
+  width: 100%;
+  min-height: 80px;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  padding: 8px;
+  resize: none;
+}

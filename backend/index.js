@@ -88,6 +88,19 @@ app.get('/users/:id', async (req, res) => {
   res.send(result);
 })
 
+app.post("/", async (req, res) => {
+  const { userId, mediaUrl, mediaType, caption } = req.body;
+
+  const post = new Post({
+    userId,
+    mediaUrl,
+    mediaType,
+    caption,
+  });
+
+  await post.save();
+  res.json(post);
+});
 
 
 // Send a ping to confirm a successful connection
