@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './Sidebar.css'
 import { LiaPhotoVideoSolid } from "react-icons/lia";
 import './OpenCreate.css'
 const USER_ID = "USER_ID_HERE";

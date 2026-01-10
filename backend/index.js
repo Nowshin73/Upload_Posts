@@ -91,14 +91,14 @@ app.get('/users/:id', async (req, res) => {
 app.post("/", async (req, res) => {
   const { userId, mediaUrl, mediaType, caption } = req.body;
 
-  const post = new Post({
+  const post = {
     userId,
     mediaUrl,
     mediaType,
     caption,
-  });
+  };
 
-  await post.save();
+  await postCollection.insertOne(post);
   res.json(post);
 });
 
