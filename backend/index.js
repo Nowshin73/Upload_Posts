@@ -88,11 +88,10 @@ app.get('/users/:id', async (req, res) => {
   res.send(result);
 })
 
-app.post("/", async (req, res) => {
-  const { userId, mediaUrl, mediaType, caption } = req.body;
+app.post("/api/posts/create", async (req, res) => {
+  const {  mediaUrl, mediaType, caption } = req.body;
 
   const post = {
-    userId,
     mediaUrl,
     mediaType,
     caption,

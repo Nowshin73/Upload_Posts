@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import './Sidebar.css'
 import { LiaPhotoVideoSolid } from "react-icons/lia";
-import './OpenCreate.css'
-const USER_ID = "USER_ID_HERE";
+import "./OpenCreate.css";
+import { CLOUD_NAME, UPLOAD_PRESET } from "../consts/cloud_name";
 
-const OpenCreate = ({ onClose, refreshPosts }) => {
+const OpenCreate = ({ onClose, refreshPosts, user }) => {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [caption, setCaption] = useState("");
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(false);
+
+  /* Cleanup preview URL */
+  useEffect(() => {
+    return () => {
+      if (preview) URL.revokeObjectURL(preview);
+    };
+  }, [preview]);
 
   const handleFileChange = (e) => {
     const selected = e.target.files[0];
@@ -26,15 +32,21 @@ const OpenCreate = ({ onClose, refreshPosts }) => {
   };
 
   const uploadToCloudinary = async () => {
+    if (!file) return;
+
     setLoading(true);
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "YOUR_UPLOAD_PRESET");
+    formData.append("upload_preset", UPLOAD_PRESET);
+
+    /* These match the Cloudinary settings I told you */
+    formData.append("folder", "fancygram");
+    formData.append("public_id", file.name.split(".")[0]); // filename
 
     try {
       const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/auto/upload",
+        `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/auto/upload`,
         formData,
         {
           onUploadProgress: (e) => {
@@ -47,6 +59,7 @@ const OpenCreate = ({ onClose, refreshPosts }) => {
       await createPost(res.data.secure_url, res.data.resource_type);
       reset();
     } catch (err) {
+      console.error(err);
       alert("Upload failed");
     } finally {
       setLoading(false);
@@ -54,15 +67,16 @@ const OpenCreate = ({ onClose, refreshPosts }) => {
   };
 
   const createPost = async (url, type) => {
-    await axios.post("http://localhost:5000/api/posts", {
-      userId: USER_ID,
+    await axios.post("http://localhost:5000/api/posts/create", {
+      // userId: "65875454df5h24",   // 🔥 real logged-in user
       mediaUrl: url,
       mediaType: type === "video" ? "video" : "image",
       caption,
     });
 
-    refreshPosts();
-    onClose();
+  //  refreshPosts();
+    // onClose();
+    reset();
   };
 
   const reset = () => {
@@ -81,6 +95,7 @@ const OpenCreate = ({ onClose, refreshPosts }) => {
 
         <div className="create-down">
           <div className="upload-box">
+
             {!preview && (
               <>
                 <LiaPhotoVideoSolid className="photo-video" />
@@ -109,10 +124,7 @@ const OpenCreate = ({ onClose, refreshPosts }) => {
 
                 {loading && (
                   <div className="progress-bar">
-                    <div
-                      className="progress"
-                      style={{ width: `${progress}%` }}
-                    />
+                    <div className="progress" style={{ width: `${progress}%` }} />
                   </div>
                 )}
 
@@ -139,6 +151,7 @@ const OpenCreate = ({ onClose, refreshPosts }) => {
                 Select From Computer
               </label>
             )}
+
           </div>
         </div>
       </div>
