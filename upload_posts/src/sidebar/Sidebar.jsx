@@ -34,7 +34,7 @@ const Sidebar = () => {
     //         }
     //     }
     //     console.log(post);
-    //     fetch("http://localhost:5000/posts",
+    //     fetch("https://fancygram.vercel.app/posts",
     //         {
     //             method: 'POST',
     //             headers: {

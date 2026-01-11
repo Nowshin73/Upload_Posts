@@ -67,7 +67,7 @@ const OpenCreate = ({ onClose, refreshPosts, user }) => {
   };
 
   const createPost = async (url, type) => {
-    await axios.post("http://localhost:5000/api/posts/create", {
+    await axios.post("https://fancygram.vercel.app/api/posts/create", {
       // userId: "65875454df5h24",   // 🔥 real logged-in user
       mediaUrl: url,
       mediaType: type === "video" ? "video" : "image",
