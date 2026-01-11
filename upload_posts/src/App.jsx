@@ -42,7 +42,8 @@ useEffect(()=>{
               color: post.style.color,
               fontSize:post.style.fontSize,
               textAlign:post.style.fontAlign,
-              lineHeight:post.style.lineHeight.toString()+'px'
+              lineHeight:post.style.lineHeight.toString()+'px',
+              padding:"10px"
               }}>
                 {post.text}
                 </div>
