@@ -3,6 +3,7 @@ import axios from "axios";
 import { LiaPhotoVideoSolid } from "react-icons/lia";
 import "./OpenCreate.css";
 import { CLOUD_NAME, UPLOAD_PRESET } from "../consts/cloud_name";
+import { uploadPost } from "../consts/server";
 
 const OpenCreate = ({ onClose, refreshPosts, user }) => {
   const [file, setFile] = useState(null);
@@ -67,16 +68,16 @@ const OpenCreate = ({ onClose, refreshPosts, user }) => {
   };
 
   const createPost = async (url, type) => {
-    await axios.post("https://fancygram.vercel.app/api/posts/create", {
+    await axios.post(uploadPost, {
       // userId: "65875454df5h24",   // 🔥 real logged-in user
       mediaUrl: url,
       mediaType: type === "video" ? "video" : "image",
       caption,
     });
-
+     confirm("Post uploaded successfully!");      
   //  refreshPosts();
     // onClose();
-    reset();
+    // reset();
   };
 
   const reset = () => {

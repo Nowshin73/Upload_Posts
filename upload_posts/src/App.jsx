@@ -4,12 +4,13 @@ import './App.css'
 import OpenCreate from './sidebar/OpenCreate';
 import { RxCrossCircled } from "react-icons/rx";
 import axios from 'axios';
+import { getPost } from './consts/server';
 
 function App() {
 const [posts,setPosts] = useState([]);
 
 useEffect(()=>{
-  const Posts = axios.get("https://fancygram.vercel.app/posts");
+  const Posts = axios.get(getPost);
   Posts.then((response) => {
     setPosts(response.data);
   });
