@@ -41,10 +41,9 @@ const OpenCreate = ({ onClose, refreshPosts, user }) => {
     formData.append("file", file);
     formData.append("upload_preset", UPLOAD_PRESET);
 
-    /* These match the Cloudinary settings I told you */
     formData.append("folder", "fancygram");
     formData.append("public_id", file.name.split(".")[0]); // filename
-
+    console.log(formData)
     try {
       const res = await axios.post(
         `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/auto/upload`,

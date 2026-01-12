@@ -5,7 +5,7 @@ import OpenCreate from './sidebar/OpenCreate';
 import { RxCrossCircled } from "react-icons/rx";
 import axios from 'axios';
 import { getPost } from './consts/server';
-
+import './sidebar/Sidebar.css'
 function App() {
 const [posts,setPosts] = useState([]);
 
